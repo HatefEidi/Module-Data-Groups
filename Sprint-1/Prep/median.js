@@ -1,6 +1,15 @@
 function calculateMedian(list) {
-    const middleIndex = Math.floor(list.length / 2);
-    const median = list.splice(middleIndex, 1)[0];
-  
+
+  if (list.length % 2 === 0) {
+    const middleIndex1 = list.length / 2 + 1;
+    const middleIndex2 = list.length / 2;
+    const median = (list[middleIndex1] + list[middleIndex2]) / 2;
     return median;
+  } 
+  
+  else {
+    const middleIndex = Math.floor(list.length / 2);
+    const median = list.slice(middleIndex, (middleIndex+1));
+    return median;
+  }
   }
