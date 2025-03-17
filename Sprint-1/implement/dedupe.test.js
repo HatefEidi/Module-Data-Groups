@@ -32,12 +32,12 @@ test("Given an array with no duplicates", () => {
 // Given an array with strings or numbers
 // When passed to the dedupe function
 // Then it should remove the duplicate values, preserving the first occurence of each element
-test("Given an array with strings or numbers", () => {
+test("Given an array with strings", () => {
     const result = dedupe(['a', 'a', 'a', 'b', 'b', 'c']);
     expect(result).toEqual(['a', 'b', 'c']);
 });
 
-test("Given an array with mixed types", () => {
+test("Given an array with mNumbers", () => {
     const result = dedupe([5, 1, 1, 2, 3, 2, 5, 8]);
     expect(result).toEqual([5, 1, 2, 3, 8]);
 });

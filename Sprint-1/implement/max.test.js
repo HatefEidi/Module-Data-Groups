@@ -16,7 +16,7 @@ const findMax = require("./max.js");
 // When passed to the max function
 // Then it should return -Infinity
 // Delete this test.todo and replace it with a test.
-test("Given an empty array", () => {
+test("Given an empty array should return infinity", () => {
     const result = findMax([]);
     expect(result).toBe(-Infinity);
 });
@@ -24,7 +24,7 @@ test("Given an empty array", () => {
 // Given an array with one number
 // When passed to the max function
 // Then it should return that number
-test("Given an array with one number" ,()=>{
+test("Given an array with one number should return the number" ,()=>{
     expect(findMax([10])).toBe(10);
 });
 
@@ -32,28 +32,28 @@ test("Given an array with one number" ,()=>{
 // Given an array with both positive and negative numbers
 // When passed to the max function
 // Then it should return the largest number overall
-test("Given an array with both positive and negative numbers" ,()=>{
+test("Given an array with both positive and negative numbers should return the greatest number" ,()=>{
     expect(findMax([-10, 20, -30, 40])).toBe(40);
 });
 
 // Given an array with just negative numbers
 // When passed to the max function
 // Then it should return the closest one to zero
-test("Given an array with just negative numbers" ,()=>{
+test("Given an array with just negative numbers should return the closest to zero" ,()=>{
     expect(findMax([-10, -20, -30, -40])).toBe(-10);
 });
 
 // Given an array with decimal numbers
 // When passed to the max function
 // Then it should return the largest decimal number
-test("Given an array with decimal numbers" ,()=>{
+test("Given an array with decimal numbers should return the greatest number" ,()=>{
     expect(findMax([10.5, 20.3, 30.7, 40.1])).toBe(40.1);
 });
 
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
-test("Given an array with non-number values" ,()=>{
+test("Given an array with non-number values should return the greatest number value" ,()=>{
     expect(findMax(['hey', 10, 'hi', 60, 10])).toBe(60);
 });
 
@@ -61,5 +61,5 @@ test("Given an array with non-number values" ,()=>{
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
 test("Given an array with only non-number values" ,()=>{
-    expect(findMax(['hey', 'hi', 'hello', 'world'])).toBe(undefined);
+    expect(findMax(['hey', 'hi', 'hello', 'world'])).toBe("No Number Given");
 });
