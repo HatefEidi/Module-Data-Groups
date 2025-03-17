@@ -51,5 +51,5 @@ test("Given an array containing non-number values" ,()=>{
 // When passed to the sum function
 // Then it should return the least surprising value given how it behaves for all other inputs
 test("Given an array with only non-number values" ,()=>{
-    expect(sum(['hey', 'Hatef', 'hi', 'Isfahan', 'London', 'United Kingdom'])).toBe(undefined);
+    expect(sum(['hey', 'Hatef', 'hi', 'Isfahan', 'London', 'United Kingdom'])).toBe(0);
     });
