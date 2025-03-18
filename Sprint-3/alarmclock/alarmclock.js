@@ -3,6 +3,8 @@ function setAlarm() {
   //Getting the time value from the input field, converting it into number, this will be in seconds
   const alarmTime = Number(document.getElementById("alarmSet").value) +  Math.floor(Date.now()/1000);;
   
+   document.getElementById('timeRemaining').innerText="Time Remaining: "+timeFormatter(alarmTime-Math.floor(Date.now()/1000));
+
   const checkAlarm=setInterval(() => {
     
     //Calculating current time inside the interval
@@ -12,7 +14,7 @@ function setAlarm() {
     const diff = alarmTime - currentTime;
 
     //Updating the time remaining text in the HTML element
-    document.getElementById('timeRemaining').innerText="Time Remaining:"+timeFormatter(diff);
+    document.getElementById('timeRemaining').innerText="Time Remaining: "+timeFormatter(diff);
 
     
 
