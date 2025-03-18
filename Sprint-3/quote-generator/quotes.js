@@ -1,3 +1,30 @@
+let autoQuoteGenerator=false;
+function newQuote(){
+  //Initialising the quote generator function when the page load for the first time
+  quoteGenerator()
+
+  //adding event listener to the new-quote button to generate a new quote when clicked
+  document.getElementById('new-quote').addEventListener('click', function(){
+    quoteGenerator();
+  });
+
+}
+
+//updating the quote and author paragraph with the current author and quote
+function quoteGenerator(){
+  //Removing h1 text
+    document.querySelector('h1').innerText='';
+
+    //Storing a randomly chosen quote from the list
+    const quote = pickFromArray(quotes);
+
+    //Updating quote and author paragraph with the quote key-value pairs
+    document.getElementById('quote').innerHTML ='<span id="quotation-mark">"</span>'+quote.quote;
+    document.getElementById('author').innerText = quote.author;
+
+  }
+window.onload = newQuote;
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
