@@ -8,17 +8,24 @@
    justify-content: center;
    align-items: center;
    flex-flow: column wrap;
-   margin: 25%;
+   margin: 10%;
    padding: 40px;
    background-color: #f0f0f0;
+   
 }
 body{
     background-color: rgb(231, 172, 63);
 }
+/* styling buttons */
+.flex-bottons{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
 
 
-
-/* Styling the.button New */
+/* Styling the each button New */
 .button{
     padding: 10px;
     border-radius: 5px;
@@ -36,7 +43,8 @@ body{
     outline: none;
 }
 .button:active{
-    background-color: #218838;
+    background-color: #e6be2f;
+    color: white;
 }
 .centre >p{
     margin: 10px;

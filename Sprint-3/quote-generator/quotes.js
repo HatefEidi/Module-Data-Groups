@@ -1,4 +1,5 @@
-let autoQuoteGenerator=false;
+let isAutoQuoteGenerator=false;
+let autoQuoteInterval = null;
 function newQuote(){
   //Initialising the quote generator function when the page load for the first time
   quoteGenerator()
@@ -8,8 +9,32 @@ function newQuote(){
     quoteGenerator();
   });
 
+  //auto generate function when auto-generator button is clicked
+  document.getElementById('auto-generator').addEventListener('click', function(){
+    autoQuoteGenerator();
+  });
 }
 
+function autoQuoteGenerator(){
+  //we want three things to immediately happen when the auto-generator button is clicked
+  //1. We clear the interval
+  clearInterval(autoQuoteInterval)
+
+  //2. we toggle auto generator 
+  isAutoQuoteGenerator=!isAutoQuoteGenerator
+
+  //3. Update the text of the auto-generator button to "Auto-Generate is ON" of "OFF" depending on autoQuoteGenerator to be true of false immediately
+  if(isAutoQuoteGenerator){
+    document.getElementById('auto-generator').innerText="Auto-Generate is ON";
+    autoQuoteInterval =setInterval(() => {   
+        quoteGenerator();   
+    }, 15000);
+    }
+    else{
+      document.getElementById('auto-generator').innerText="Auto-Generate is OFF";
+    }
+  
+}
 //updating the quote and author paragraph with the current author and quote
 function quoteGenerator(){
   //Removing h1 text
@@ -20,7 +45,7 @@ function quoteGenerator(){
 
     //Updating quote and author paragraph with the quote key-value pairs
     document.getElementById('quote').innerHTML ='<span id="quotation-mark">"</span>'+quote.quote;
-    document.getElementById('author').innerText = quote.author;
+    document.getElementById('author').innerText = "- "+quote.author;
 
   }
 window.onload = newQuote;
