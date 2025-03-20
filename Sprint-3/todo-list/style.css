@@ -29,7 +29,7 @@ border: 1px solid #ccc;
 border-radius: 5px;
 box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
-#todo-list{
+#todo-list, #completed-todo-list{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +39,7 @@ box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 
 }
-#todo-list span{
+#todo-list span, #completed-todo-list span{
     display: flex;
     margin: 10px;
     flex-direction: row;
