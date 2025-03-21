@@ -36,18 +36,22 @@ function autoQuoteGenerator(){
   
 }
 //updating the quote and author paragraph with the current author and quote
-function quoteGenerator(){
-  //Removing h1 text
-    document.querySelector('h1').innerText='';
+function quoteGenerator() {
+  // Removing h1 text
+  document.querySelector('h1').innerText = '';
 
-    //Storing a randomly chosen quote from the list
-    const quote = pickFromArray(quotes);
+  // Storing a randomly chosen quote from the list
+  const quote = pickFromArray(quotes);
 
-    //Updating quote and author paragraph with the quote key-value pairs
-    document.getElementById('quote').innerHTML ='<span id="quotation-mark">"</span>'+quote.quote;
-    document.getElementById('author').innerText = "- "+quote.author;
+  // Updating quote and author paragraph with the quote key-value pairs
+  document.getElementById('quote').innerText = quote.quote;
+  const quotationMarkSpan = document.createElement('span');
+  quotationMarkSpan.id = 'quotation-mark';
+  quotationMarkSpan.innerText = '"';
+  document.getElementById('quote').appendChild(quotationMarkSpan);
 
-  }
+  document.getElementById('author').innerText = "- " + quote.author;
+}
 window.onload = newQuote;
 
 // DO NOT EDIT BELOW HERE
